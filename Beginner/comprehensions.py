@@ -6,15 +6,15 @@ for n in nums:
   my_list.append(n)
 print my_list
 
-print [n for n in nums]
+print ([n for n in nums])
 
 # I want 'n*n' for each 'n' in nums
 # my_list = []
 # for n in nums:
 #   my_list.append(n*n)
 # print my_list
-
-print ([n*n for n in nums])
+mylist = [n*n for n in nums]
+print (mylist)
 # Using a map + lambda
 # my_list = map(lambda n: n*n, nums)
 # print my_list
@@ -25,6 +25,9 @@ print ([n*n for n in nums])
 #   if n%2 == 0:
 #     my_list.append(n)
 # print my_list
+my_list = [n for n in nums if n %2 ==0]
+print(my_list)
+
 
 # Using a filter + lambda
 # my_list = filter(lambda n: n%2 == 0, nums)
@@ -37,6 +40,9 @@ print ([n*n for n in nums])
 #     my_list.append((letter,num))
 # print my_list
 
+my_list = [(letter,num) for letter in 'abcd' for num in range(4)]
+print(my_list)
+
 # Dictionary Comprehensions
 names = ['Bruce', 'Clark', 'Peter', 'Logan', 'Wade']
 heros = ['Batman', 'Superman', 'Spiderman', 'Wolverine', 'Deadpool']
@@ -48,7 +54,8 @@ heros = ['Batman', 'Superman', 'Spiderman', 'Wolverine', 'Deadpool']
 #     my_dict[name] = hero
 # print my_dict
 
-
+my_dict = {name:hero for name,hero in zip(names,heros) ..} --> optional if names != 'Peter'
+print(my_dict)
 
 # If name not equal to Peter
 
@@ -58,7 +65,8 @@ heros = ['Batman', 'Superman', 'Spiderman', 'Wolverine', 'Deadpool']
 # for n in nums:
 #     my_set.add(n)
 # print my_set
-
+my_set = {n for n in nums}
+print(my_set)
 
 # Generator Expressions
 # I want to yield 'n*n' for each 'n' in nums
@@ -69,6 +77,8 @@ nums = [1,2,3,4,5,6,7,8,9,10]
 #         yield n*n
 
 # my_gen = gen_func(nums)
-
 # for i in my_gen:
 #     print i
+my_gen = (n*n for n in nums)
+for i in my_gen:
+    print i
