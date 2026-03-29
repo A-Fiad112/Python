@@ -14,6 +14,7 @@ print [n for n in nums]
 #   my_list.append(n*n)
 # print my_list
 
+print ([n*n for n in nums])
 # Using a map + lambda
 # my_list = map(lambda n: n*n, nums)
 # print my_list
