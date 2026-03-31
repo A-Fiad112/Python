@@ -1,6 +1,7 @@
 import os
 print(dir(os))
 print(dir(os.path))
+print(os.__file__) -> entire standed library
 os.chdir() -> change directory
 print(os.getcwd()) -> get current working directory
 print(os.listdir()) -> folders and fiels on desktop
